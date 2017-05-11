@@ -7,15 +7,13 @@ package com.zhouguobao.pachong;
 
 import java.util.LinkedList;
 
-import com.zhouguobao.pachong.util.StringUtil;
-
 public class Queue {
-	private LinkedList<String> queue = new LinkedList<>();
+	private LinkedList<Object> queue = new LinkedList<>();
 	/**
 	 * 入队列
 	 * @param str
 	 */
-	public void add(String str){
+	public void add(Object str){
 			queue.addLast(str);			
 	}
 	/**
@@ -23,14 +21,14 @@ public class Queue {
 	 * @param str
 	 * @return
 	 */
-	public boolean contain(String str){
+	public boolean contain(Object str){
 		return queue.contains(str);	
 	}
 	/**
 	 * 出队列
 	 * @return
 	 */
-	public String pop() {
+	public Object pop() {
 		return queue.removeFirst();	
 	}
 	
@@ -40,6 +38,10 @@ public class Queue {
 	 */
 	public boolean isEmpty(){
 		return queue.isEmpty();
+	}
+	
+	public LinkedList<Object> getQueue() {
+		return queue;
 	}
 	
 }

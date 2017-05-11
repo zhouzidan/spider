@@ -8,35 +8,40 @@ package com.zhouguobao.pachong;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.zhouguobao.pachong.util.StringUtil;
-
 public class LinkQueue {
 	// 已访问的URL集合
-	private static Set visitedUrl = new HashSet<>();
+	private Set visitedUrl = null;
 	// 待访问的URL集合
-	private static Queue unVisitUrl = new Queue();
+	private Queue unVisitUrl = null;
+	
+	private LinkQueue childQueue = null;
 
-	public static Set getVisitedUrl() {
+	public LinkQueue() {
+		visitedUrl = new HashSet<>();
+		unVisitUrl = new Queue();
+	}
+
+	public Set getVisitedUrl() {
 		return visitedUrl;
 	}
 
-	public static Queue getUnVisitUrl() {
+	public Queue getUnVisitUrl() {
 		return unVisitUrl;
 	}
 
 	// 添加到访问过的Url
-	public static void addVisistedUrl(String url) {
-		if (StringUtil.isEmpty(url) == false) {
+	public void addVisistedUrl(Object url) {
+		if (url != null) {
 			visitedUrl.add(url);
 		}
 	}
 
-	public static void removeVisistedUrl(String url) {
+	public void removeVisistedUrl(Object url) {
 		visitedUrl.remove(url);
 	}
 
 	// 从未访问队列中，弹出一个
-	public static String popUnVisitUrl() {
+	public Object popUnVisitUrl() {
 		if (unVisitUrl.isEmpty() == false) {
 			return unVisitUrl.pop();
 		}
@@ -44,15 +49,25 @@ public class LinkQueue {
 	}
 
 	// 增加到未访问的队列中
-	public static void addUnVisistUrl(String url) {
-		if (StringUtil.isEmpty(url) == false && unVisitUrl.contain(url) == false) {
+	public void addUnVisistUrl(Object url) {
+		if (url != null && unVisitUrl.contain(url) == false) {
 			unVisitUrl.add(url);
 		}
 	}
-	
-	//判断未访问队列是否为空
-	public static boolean isUnVisitUrlEmpty(){
+
+	// 判断未访问队列是否为空
+	public boolean isUnVisitUrlEmpty() {
 		return unVisitUrl.isEmpty();
 	}
+
+	public LinkQueue getChildQueue() {
+		return childQueue;
+	}
+
+	public void setChildQueue(LinkQueue childQueue) {
+		this.childQueue = childQueue;
+	}
+	
+	
 
 }
