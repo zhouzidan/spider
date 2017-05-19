@@ -15,6 +15,11 @@ python收到追捧，很大的原因是它下面支持的开源库很多。</br>
 
 [GitHub - zhouzidan/spider](https://github.com/zhouzidan/spider)
 当前项目就是实现第一步：通过爬虫获取网络上图片的相关信息</br>
+[GitHub - zhouzidan/spider](https://github.com/zhouzidan/spider)
+当前项目就是实现第一步：通过爬虫获取网络上图片的相关信息</br>
+[GitHub - zhouzidan/plmm](https://github.com/zhouzidan/plmm)
+这个项目实现的第2、3、4三步。是一个Android项目
+
 使用了开源库： [GitHub - jhy/jsoup: jsoup: Java HTML Parser, with best of DOM, CSS, and jquery](https://github.com/jhy/jsoup)</br>
 很好很棒很牛逼
 
